@@ -1,1 +1,1 @@
-web: gunicorn -b 0.0.0.0:$PORT integrated_api:app
+web: gunicorn -b 0.0.0.0:$PORT tutorialBlogApp:app
