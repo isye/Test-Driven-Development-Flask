@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Clean Blog - Start Bootstrap Theme</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <!--link rel="stylesheet" href="{{ url_for('static', filename='clean-blog.min.css') }}"-->
+  <link rel="stylesheet" href="/static/clean-blog.min.css">
+
+</head>
+
+<body class="preview-page">
+
+  <!-- Page Header -->
+  <!--header class="masthead" style="background-image: url('img/home-bg.jpg')"-->
+  <div class="container">
+      <br>
+  <header class="jumbotron" style="background-image: url('/static/steps.jpg'); background-position:center; background-size:cover; color:white; opacity:0.75;background-color:#212529;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Simple Steps</h1>
+            <h3>to ..</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  </div>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {%if data%}
+        {% for d in data %}
+        <div class="post-preview">
+          <a href="{{url_for('post', id=d.get('id',None))}}">
+            <h2 class="post-title">
+              {{d.get('title','')}}
+            </h2>
+            <h3 class="post-subtitle">
+              {{d.get('sub_title','')}}
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="#">Arieshanti</a>
+            </p>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <hr>
+
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/static/clean-blog.min.js"></script>
+</body>
+
+</html>
