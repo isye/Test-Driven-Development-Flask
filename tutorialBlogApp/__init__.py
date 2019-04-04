@@ -9,3 +9,5 @@ def create_app(config_file = None):
     app.add_url_rule('/post/<string:id>', endpoint='post')
 
     return app
+
+app = create_app()
